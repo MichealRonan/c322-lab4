@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
+
     <label>Id:</label>
     <input id="duckId"/>
     <label>Type:</label>
     <input id="duckType" />
+    <label>Image:</label>
+    <input type="file" id="duckImage">
     <button onclick="addTheDuck()">Add the duck</button>
 
     <script>
@@ -20,6 +24,9 @@
            let duckType = duckTypeNode.value;
            let duck = {id: duckId, type: duckType}
            alert("You entered: " + JSON.stringify(duck));
+
+           let duckImageNode = document.getElementById(duckImage);
+           alert("The image:" + ", size = " + duckImageNode.files[0].size);
         }
     </script>
 
